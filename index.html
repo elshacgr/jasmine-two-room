@@ -1,8 +1,21 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Image Gallery - Easy Tutorials</title>
         <meta name ="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!--Chatbot-->
+        <link rel="stylesheet" type="text/css" href="css/jquery.convform.css">
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.convform.js"></script>
+    <script>
+        $(document).ready(function () {
+          $('.chat_icon').click(function (event) {
+            $('.chat_box').toggleClass('active');
+          });
+          $('.conv-form-wrapper').convform({selectInputStyle: 'disable'});
+        });
+      </script>
     </head>
 <body>
     <div class="text">
@@ -11,15 +24,15 @@
     <div class="product">
         <div class="product-small-img">
 
-            <img src="img-1.jpg" onclick="myFunction(this)">
+            <img src="images/img-1.jpg" onclick="myFunction(this)">
             </div>
             <div class="product-small-img">
-                <img src="img-2.jpg" onclick="myFunction(this)">
+                <img src="images/img-2.jpg" onclick="myFunction(this)">
             </div>
             
         </div>
         <div class="img-container">
-            <img id="imageBox" src="img-1.jpg">
+            <img id="imageBox" src="images/img-1.jpg">
         </div>
     </div>
     <script>
@@ -29,5 +42,31 @@
             fullImg.src = smallImg.src;
         }
     </script>
+    <!--Chatbot-->
+    <div class ="chat_icon">
+        <img src="images/comment-solid.jpg"     
+        width="50" 
+        height="50">
+    </div>
+    <div class ="chat_box">
+        <div class="conv-form-wrapper">
+        <form action="" method="GET" class="hidden">
+            <select name="programmer" data-conv-question="Hai! Selamat datang di FameuxBot Universitas Klabat! Di sini kamu dapat mengetahui informasi tentang asrama dan memesan kamar asrama.">
+            </select>
+            <div data-conv-fork="programmer">
+                <!-- <div data-conv-case="yes">
+                     <input type="text" data-conv-question="A fellow programmer! Cool." data-no-answer="true">
+                </div>
+                <div data-conv-case="no">
+                    <select name="thought" data-conv-question="Have you ever thought about learning? Programming is fun!">
+                        <option value="yes">Yes</option>
+                        <option value="no">No..</option>
+                    </select>
+                </div> -->
+            </div>
+        </form>
+    </div>
+    </div>
+    <!--Chatbot End-->
 </body>
 </html>
